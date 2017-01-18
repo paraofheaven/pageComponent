@@ -9,7 +9,7 @@ module.exports ={
 		index: './src/index.js'
 	},
 	output:{
-		path:'./dist/',
+		path:'./dist',
 		filename:'[name].js'
 	},
 	module:{

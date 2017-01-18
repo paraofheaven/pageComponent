@@ -1,0 +1,30 @@
+.dis-pagination {
+  font-size: 0.7rem;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: right;
+  li {
+    list-style: none;
+    display: inline-block;
+    a {
+      color: #333;
+      height: 1.5rem;
+      padding: 0 0.5rem;
+      line-height: 1.5rem;
+      display: inline-block;
+      background-color: white;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      &.disabled {
+        color: #999;
+        background: #eef3f7;
+        cursor: default;
+      }
+      &.active {
+        color: white;
+        background: #66CCFF;
+        border: 1px solid #0bc;
+      }
+    }
+  }
+}

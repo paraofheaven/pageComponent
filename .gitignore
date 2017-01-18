@@ -3,3 +3,5 @@ node_modules/
 .project
 src/config/*.tmp
 src/config/env.js
+dist/css/*.css.map
+.sass-cache/

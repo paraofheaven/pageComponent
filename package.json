@@ -1,7 +1,7 @@
 {
   "name": "pagecomponent",
   "version": "1.0.0",
-  "description": "a page component use in product\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C dev",
+  "description": "a page component use in product dev",
   "main": "index.js",
   "scripts": {
     "init": "webpack --progress --config webpack.config.js",
@@ -21,7 +21,13 @@
     "babel-runtime": "^5.8.34",
     "css-loader": "^0.23.1",
     "webpack": "^1.13.1",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-util": "^3.0.4",
+    "node-sass": "^3.4.2",
+    "require-dir": "^0.3.0"
   },
   "keywords": [
     "component"
