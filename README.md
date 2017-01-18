@@ -1,0 +1,2 @@
+# pageComponent
+a page component
