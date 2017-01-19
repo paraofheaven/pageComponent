@@ -4,7 +4,7 @@ page.getInstance({
     page: 1,
     limit: 10,
     containerId: 'page',
-    onchange: function(){};
+    onchange: function(){}
     // this.request.bind(this)
-}).render()
+}).render();
 // .setParameters(this.getParams()).render();

@@ -48,6 +48,7 @@ let page =(function(){
         this.go(1);
     };
     Page.prototype._bindEvent = ()=>{
+    	var self=this;
 	    this.$container.find('li a').unbind('click');
 	    this.$container.delegate('li a', 'click', (e)=>{
 	        var $target = $(e.target);
@@ -55,40 +56,41 @@ let page =(function(){
 	            return false;
 	        }
 	        if ($target.hasClass('previous')) {
-	            if (this.page <= 1) {
+	            if (self.page <= 1) {
 	                return false;
 	            } else {
-	                this.go(--this.page);
+	                self.go(--self.page);
 	            }
 	        } else if ($target.hasClass('next')) {
-	            if (this.page == this.total) {
+	            if (self.page == self.total) {
 	                return false;
 	            } else {
-	                this.go(++this.page);
+	                self.go(++self.page);
 	            }
 	        } else if($target.attr('data-page')){
-	            this.go(parseInt($target.attr('data-page')));
+	            self.go(parseInt($target.attr('data-page')));
 	        }
 	        return true;
 	    });
 	};
     Page.prototype.go = (page) =>{
+    	var self=this;
         this.params = this.params || {};
         this.page = page || this.page;
         this.params.page = this.page;
         this.params.start = this.limit * (this.page - 1);
         this.params.limit = this.limit;
         this.onchange(this.params, (total)=> {
-            this.total = Math.ceil(total / this.limit);
-            if (this.total == 0) {
-                this.page = 0;
+            self.total = Math.ceil(total / self.limit);
+            if (self.total == 0) {
+                self.page = 0;
             }else{
-                if(this.page > this.total){
-                    this.page = this.total;
-                    this.go(this.total);
+                if(self.page > self.total){
+                    self.page = self.total;
+                    self.go(this.total);
                 }
             }
-            this._change();
+            self._change();
         });
     };
     Page.prototype._change = ()=> {
